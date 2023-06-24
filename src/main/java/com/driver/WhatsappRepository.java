@@ -15,7 +15,7 @@ public class WhatsappRepository {
     private HashMap<Message, User> senderMap;
     private HashMap<Group, User> adminMap;
     private HashMap<String,User> userMobile;
-    private int customGroupCount = 0;
+    private int customGroupCount ;
     private int messageId;
 
     public WhatsappRepository(){
@@ -39,6 +39,7 @@ public class WhatsappRepository {
     }
 
     public Group creteGroup(List<User> users) throws Exception {
+        customGroupCount = 0;
         Group gr = new Group();
         List<User> al = new ArrayList<>(users);
         if(users.size() < 2){
