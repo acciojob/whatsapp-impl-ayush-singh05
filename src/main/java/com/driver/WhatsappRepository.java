@@ -15,7 +15,7 @@ public class WhatsappRepository {
     private HashMap<Message, User> senderMap;
     private HashMap<Group, User> adminMap;
     private HashMap<String,User> userMobile;
-    private int customGroupCount = 1;
+    private int customGroupCount = 0;
     private int messageId;
 
     public WhatsappRepository(){
@@ -28,14 +28,10 @@ public class WhatsappRepository {
         this.messageId = 0;
     }
 
-    public String createUser(String name, String mobile) {
+    public String createUser(String name, String mobile) throws Exception {
 
         if(userMobile.containsKey(mobile)){
-            try {
-                throw new RuntimeException("User already exists");
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
+            throw new Exception("User already exists");
         }
         User user = new User(name,mobile);
         userMobile.put(mobile,user);
