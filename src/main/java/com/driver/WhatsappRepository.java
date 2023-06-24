@@ -39,7 +39,7 @@ public class WhatsappRepository {
     }
 
     public Group creteGroup(List<User> users) throws Exception {
-        customGroupCount = 0;
+
         Group gr = new Group();
         List<User> al = new ArrayList<>(users);
         if(users.size() < 2){
