@@ -52,11 +52,11 @@ public class WhatsappRepository {
 
             groupUserMap.put(gr,al);
         }else {
-            gr.setName("Group "+(customGroupCount++));
+            gr.setName("Group "+(customGroupCount));
             gr.setNumberOfParticipants(users.size());
             groupUserMap.put(gr,al);
             adminMap.put(gr,users.get(0));
-
+            customGroupCount++;
         }
         return gr;
 
